@@ -2,7 +2,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	height: 42px;
+	min-height: 42px;
+	line-height: 18px;
 	padding: 8px 16px;
 	background: #fafafa;
 	border: 1px solid #eeeeee;
@@ -10,6 +11,31 @@
 	column-gap: 20px;
 }
 
+.label {
+	display: flex;
+	align-items: center;
+	column-gap: 10px;
+}
+
 .deleteIcon {
 	cursor: pointer;
+}
+
+.completed {
+	background: #e8f3e1;
+	border: 1px solid #7ea86f;
+}
+
+.checkBox {
+	position: relative;
+	width: 17px;
+	height: 17px;
+	border: 1.5px solid #a8a8a8;
+	border-radius: 50%;
+	cursor: pointer;
+	top: 0.5px;
+}
+
+.checked {
+	border: 1.5px solid #7ea86f;
 }

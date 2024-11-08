@@ -36,8 +36,21 @@ const ListContextProvider = (props: ListContextProps) => {
 		})
 	}
 
+	const checkItem = (id: string) => {
+		setList((curr: Array<ListItemType>) => {
+			const updatedCurr = curr.map((item) => {
+				if (item.id === id) item.completed = !item.completed
+				return item
+			})
+			localStorage.setItem("list", JSON.stringify(updatedCurr))
+			return updatedCurr
+		})
+	}
+
 	return (
-		<ListContext.Provider value={{ list, addItem, removeItem }}>{children}</ListContext.Provider>
+		<ListContext.Provider value={{ list, addItem, removeItem, checkItem }}>
+			{children}
+		</ListContext.Provider>
 	)
 }
 

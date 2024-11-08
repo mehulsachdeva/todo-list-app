@@ -10,7 +10,7 @@ import { ListItemType } from "components/types/list"
 const Home = () => {
 	const [searchValue, setSearchValue] = useState<string>("")
 	const [listClone, setListClone] = useState<Array<ListItemType>>([])
-	const { list, addItem, removeItem } = useContext<any>(ListContext)
+	const { list, addItem, removeItem, checkItem } = useContext<any>(ListContext)
 
 	useLayoutEffect(() => {
 		const updatedList = list.filter((item: ListItemType) =>
@@ -36,7 +36,9 @@ const Home = () => {
 				<div className={styles.list}>
 					{listClone.length > 0 ? (
 						listClone.map((item: ListItemType) => {
-							return <ListItem key={item.id} data={item} onRemove={removeItem} />
+							return (
+								<ListItem key={item.id} data={item} onCheck={checkItem} onRemove={removeItem} />
+							)
 						})
 					) : (
 						<div className={styles.emptyLabel}>No tasks found</div>
