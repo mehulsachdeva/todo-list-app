@@ -1,0 +1,15 @@
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 42px;
+	padding: 8px 16px;
+	background: #fafafa;
+	border: 1px solid #eeeeee;
+	border-radius: 6px;
+	column-gap: 20px;
+}
+
+.deleteIcon {
+	cursor: pointer;
+}

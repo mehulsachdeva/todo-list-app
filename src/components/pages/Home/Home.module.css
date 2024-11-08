@@ -1,0 +1,40 @@
+.container {
+	width: 100%;
+	padding: 50px 20%;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px 0px;
+	column-gap: 30px;
+}
+
+.day {
+	font-size: 30px;
+	letter-spacing: -1px;
+	font-weight: 700;
+	flex-shrink: 0;
+}
+
+.input {
+	position: relative;
+	top: 1.5px;
+	flex: 1;
+}
+
+.chips {
+	flex-shrink: 0;
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	margin-top: 32px;
+	row-gap: 10px;
+}
+
+.newTask {
+	margin-top: 12px;
+}
