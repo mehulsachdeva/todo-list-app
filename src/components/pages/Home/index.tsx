@@ -32,15 +32,17 @@ const Home = () => {
 				/>
 				<div className={styles.chips}>Chips</div>
 			</div>
-			<div className={styles.list}>
-				{listClone.length > 0 ? (
-					listClone.map((item: ListItemType) => {
-						return <ListItem key={item.id} data={item} onRemove={removeItem} />
-					})
-				) : (
-					<div className={styles.emptyLabel}>No tasks found</div>
-				)}
-			</div>
+			{searchValue.length > 0 || listClone.length > 0 ? (
+				<div className={styles.list}>
+					{listClone.length > 0 ? (
+						listClone.map((item: ListItemType) => {
+							return <ListItem key={item.id} data={item} onRemove={removeItem} />
+						})
+					) : (
+						<div className={styles.emptyLabel}>No tasks found</div>
+					)}
+				</div>
+			) : null}
 			<div className={styles.newTask}>
 				<AddNewTask onSubmit={addItem} />
 			</div>
