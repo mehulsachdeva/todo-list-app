@@ -1,4 +1,4 @@
-import { useCallback, useContext } from "react"
+import { useContext } from "react"
 import styles from "./Home.module.css"
 import { ListContext } from "contexts/list"
 import Input from "components/common/shared/Input"
@@ -7,11 +7,7 @@ import AddNewTask from "components/common/core/AddNewTask"
 import { ListItemType } from "components/types/list"
 
 const Home = () => {
-	const { list, setList } = useContext<any>(ListContext)
-
-	const handleSubmit = useCallback((item: ListItemType) => {
-		setList((curr: Array<ListItemType>) => [...curr, item])
-	}, [])
+	const { list, addItem, removeItem } = useContext<any>(ListContext)
 
 	return (
 		<div className={styles.container}>
@@ -22,11 +18,11 @@ const Home = () => {
 			</div>
 			<div className={styles.list}>
 				{list.map((item: ListItemType) => {
-					return <ListItem key={item.id} data={item} />
+					return <ListItem key={item.id} data={item} onRemove={removeItem} />
 				})}
 			</div>
 			<div className={styles.newTask}>
-				<AddNewTask onSubmit={handleSubmit} />
+				<AddNewTask onSubmit={addItem} />
 			</div>
 		</div>
 	)

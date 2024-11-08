@@ -5,16 +5,17 @@ import { Cross } from "components/common/icons/Cross"
 
 interface ListItemProps {
 	data: ListItemType
+	onRemove: (id: string) => void
 }
 
 const ListItem = (props: ListItemProps) => {
-	const { data } = props
+	const { data, onRemove } = props
 
 	if (!data) return null
 	return (
 		<div className={styles.container}>
 			<div>{data.label}</div>
-			<div className={styles.deleteIcon}>
+			<div className={styles.deleteIcon} onClick={() => onRemove(data.id)}>
 				<Cross width={10} height={10} fill="#a8a8a8" />
 			</div>
 		</div>
