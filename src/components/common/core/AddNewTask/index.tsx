@@ -19,6 +19,7 @@ const AddNewTask = (props: AddNewTaskProps) => {
 			label: value,
 			completed: false,
 		})
+		setValue("")
 	}, [value, onSubmit])
 
 	return (

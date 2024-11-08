@@ -38,3 +38,10 @@
 .newTask {
 	margin-top: 12px;
 }
+
+.emptyLabel {
+	font-size: 12px;
+	font-weight: 500;
+	color: #666666;
+	text-align: center;
+}
