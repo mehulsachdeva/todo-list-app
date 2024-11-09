@@ -24,7 +24,7 @@ const AddNewTask = (props: AddNewTaskProps) => {
 
 	const handleKeyDown = useCallback(
 		(e) => {
-			if (!e.key === "Enter") return
+			if (e.key !== "Enter") return
 			handleSubmit()
 		},
 		[handleSubmit],
