@@ -1,5 +1,7 @@
 # To-Do List App
 
+### [https://todo-list-app-mehulsachdevas-projects.vercel.app/](https://todo-list-app-mehulsachdevas-projects.vercel.app/)
+
 ## Version: 1.0.0
 
 ### Technologies Used
@@ -7,6 +9,12 @@
 - React
 - TypeScript
 - CSS Modules
+
+### Features Breakdown:
+- **Add, Remove, Delete Tasks**: Basic task management functions.
+- **Mark as Completed**: Manage the completion status of tasks.
+- **Filter by Completion Status**: View tasks based on whether they are finished or still pending.
+- **Search**: Locate tasks quickly using a keyword search.
 
 ## Getting Started
 
