@@ -9,6 +9,7 @@ interface InputProps {
 	height?: string | number
 	value?: string
 	placeholder?: string
+	onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void
 	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
@@ -20,6 +21,7 @@ const Input = (props: InputProps) => {
 		value,
 		placeholder,
 		className = "",
+		onKeyDown,
 		onChange,
 	} = props
 
@@ -35,6 +37,7 @@ const Input = (props: InputProps) => {
 			type={type}
 			value={value}
 			placeholder={placeholder}
+			onKeyDown={onKeyDown}
 			onChange={onChange}
 		/>
 	)

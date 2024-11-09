@@ -22,6 +22,15 @@ const AddNewTask = (props: AddNewTaskProps) => {
 		setValue("")
 	}, [value, onSubmit])
 
+	const handleKeyDown = useCallback(
+		(e) => {
+			if (e.key === "Enter") {
+				handleSubmit()
+			}
+		},
+		[handleSubmit],
+	)
+
 	return (
 		<>
 			<Input
@@ -29,6 +38,7 @@ const AddNewTask = (props: AddNewTaskProps) => {
 				height={42}
 				value={value}
 				placeholder="Type something..."
+				onKeyDown={handleKeyDown}
 				onChange={(e) => setValue(e.target.value)}
 			/>
 			<Button width="100%" disabled={!value.trim()} onClick={handleSubmit}>
