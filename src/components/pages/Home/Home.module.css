@@ -1,0 +1,74 @@
+.container {
+	width: 100%;
+	padding: 50px 20%;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px 0px;
+	column-gap: 30px;
+}
+
+.day {
+	font-size: 30px;
+	letter-spacing: -1px;
+	font-weight: 700;
+	flex-shrink: 0;
+}
+
+.input {
+	position: relative;
+	top: 1.5px;
+	flex: 1;
+}
+
+.chips {
+	flex-shrink: 0;
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	margin-top: 32px;
+	row-gap: 10px;
+}
+
+.newTask {
+	margin-top: 12px;
+}
+
+.emptyLabel {
+	height: 42px;
+	font-size: 12px;
+	font-weight: 500;
+	color: #666666;
+	text-align: center;
+}
+
+@media (max-width: 768px) {
+	.container {
+		padding: 20px;
+	}
+
+	.header {
+		padding: 10px 0px;
+		flex-wrap: wrap;
+		row-gap: 10px;
+	}
+
+	.input {
+		flex-basis: 100%;
+		flex: unset;
+	}
+
+	.chips {
+		flex-basis: 100%;
+		margin-top: 5px;
+	}
+
+	.list {
+		margin-top: 12px;
+	}
+}
