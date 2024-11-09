@@ -1,0 +1,25 @@
+.container {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	column-gap: 8px;
+	row-gap: 4px;
+}
+.tab {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: max-content;
+	height: 26px;
+	padding: 2px 8px;
+	font-size: 12px;
+	background: #ababab;
+	border-radius: 4px;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.selectedTab {
+	background: #56ad37;
+	cursor: default;
+}
