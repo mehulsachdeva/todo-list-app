@@ -40,6 +40,7 @@ const Home = () => {
 					className={styles.input}
 					placeholder="Search"
 					onChange={debounce(handleSearchChange, 500)}
+					showSearchIcon
 				/>
 				<div className={styles.chips}>
 					<Tabs tabs={TABS} selected={selectedTab} onClick={setSelectedTab} />

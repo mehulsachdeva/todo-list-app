@@ -1,6 +1,7 @@
 import React, { memo, CSSProperties } from "react"
 import styles from "./Input.module.css"
 import { convertToPixels } from "utils"
+import { Search } from "components/common/icons/Search"
 
 interface InputProps {
 	type?: "text"
@@ -9,6 +10,7 @@ interface InputProps {
 	height?: string | number
 	value?: string
 	placeholder?: string
+	showSearchIcon?: boolean
 	onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void
 	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
@@ -21,25 +23,35 @@ const Input = (props: InputProps) => {
 		value,
 		placeholder,
 		className = "",
+		showSearchIcon = false,
 		onKeyDown,
 		onChange,
 	} = props
 
 	return (
-		<input
+		<div
 			style={
 				{
 					"--width": convertToPixels(width),
 					"--height": convertToPixels(height),
 				} as CSSProperties
 			}
-			className={`${styles.input} ${className}`}
-			type={type}
-			value={value}
-			placeholder={placeholder}
-			onKeyDown={onKeyDown}
-			onChange={onChange}
-		/>
+			className={styles.container}
+		>
+			<input
+				className={`${styles.input} ${showSearchIcon ? styles.paddedInput : ""} ${className}`}
+				type={type}
+				value={value}
+				placeholder={placeholder}
+				onKeyDown={onKeyDown}
+				onChange={onChange}
+			/>
+			{showSearchIcon ? (
+				<div className={styles.searchIcon}>
+					<Search fill="#909193" />
+				</div>
+			) : null}
+		</div>
 	)
 }
 

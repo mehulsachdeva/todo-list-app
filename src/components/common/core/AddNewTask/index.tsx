@@ -31,7 +31,7 @@ const AddNewTask = (props: AddNewTaskProps) => {
 	)
 
 	return (
-		<>
+		<div className={styles.container}>
 			<Input
 				className={styles.input}
 				height={42}
@@ -43,7 +43,7 @@ const AddNewTask = (props: AddNewTaskProps) => {
 			<Button width="100%" disabled={!value.trim()} onClick={handleSubmit}>
 				Add Task
 			</Button>
-		</>
+		</div>
 	)
 }
 
